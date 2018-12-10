@@ -1,0 +1,13 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}" style="margin-top:50px;">
+    <ul class="list-group">
+        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-dashboard"></i>&nbsp;Home
+        </a>
+        <a [routerLink]="['/show-categories']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-list"></i>&nbsp;Categories
+        </a>
+        <a [routerLink]="['/advanced-search']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-search"></i>&nbsp;Advanced search
+        </a>
+    </ul>
+</nav>

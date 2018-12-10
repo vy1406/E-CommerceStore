@@ -1,0 +1,29 @@
+<div [@routerTransition]>
+    <app-admin-header [heading]="'Remove'" [thirdInput]="'Product'" [thirdLink]="'product'" [isRemove]="'yes'"></app-admin-header>
+    
+    <div class="row">
+        <p style="margin-left:10px;"><strong>Product name:</strong></p><p style="margin-left:5px;"> {{product.productName}}</p>
+    </div>
+    <div class="row">
+        <p style="margin-left:10px;"><strong>Category:</strong></p><p style="margin-left:5px;"> {{product.category}}</p>
+    </div>
+    <div class="row">
+        <p style="margin-left:10px;"><strong>Price:</strong></p><p style="margin-left:5px;"> {{product.price}}</p>
+    </div>
+    <div class="row">
+        <p style="margin-left:10px;"><strong>Origin:</strong></p><p style="margin-left:5px;"> {{product.origin}}</p>
+    </div>
+    <div class="row">
+        <p style="margin-left:10px;"><strong>Volume %:</strong></p><p style="margin-left:5px;"> {{product.volume}}</p>
+    </div>
+    <div class="row">
+        <p style="margin-left:10px;"><strong>Capacity</strong></p><p style="margin-left:5px;"> {{product.capacity}}</p>
+    </div>
+    <div class="row">
+        <p style="margin-left:10px;"><strong>Info:</strong></p><p style="margin-left:5px;"> {{product.info}}</p>
+    </div>
+    <div class="row">
+        <button type="button" style="margin-left:10px;" (click)="onClickRemoveConfirm()" class="btn btn-primary">Delete</button>
+    </div>
+    <!-- /.row -->
+</div>

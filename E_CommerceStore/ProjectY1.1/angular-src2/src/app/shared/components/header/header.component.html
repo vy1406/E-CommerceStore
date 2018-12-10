@@ -1,0 +1,11 @@
+<div class="pos-f-t fixed-top header" style="margin-top:50px; z-index:1;">
+    <nav class="navbar navbar-inverse bg-inverse navbar-toggleable-md" style="padding-left:3px;">
+        <button class="navbar-toggler navbar-toggler-right" (click)="toggleSidebar()">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="form-inline my-lg-0 col col-6">
+            <input class="form-control mr-sm-2" #searchWord (keyup.enter)="onSearchSubmit(searchWord)" type="text" placeholder="Search product">
+        </div>
+    </nav>
+</div>

@@ -1,0 +1,29 @@
+<div [@routerTransition]>
+    <app-admin-header [heading]="'Category'"></app-admin-header>
+    <div class="card mb-3">
+        <div class="card-header">
+            <input type="text" placeholder="Search" [(ngModel)]="searchField" style="width:150px;" />
+            <a class="btn btn-primary" [routerLink]="['/admin-tools/category/add']" style="float:right;line-height:0.8">Create</a>
+        </div>
+        <table class="table table-sm table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th class="text-center"><em class="fa fa-cog"></em></th>
+                    <th class="pointer" (click)="sort('categoryName')">
+                        Name <i class="fa" [ngClass]="{'fa-sort': column != 'categoryName',
+                        'fa-sort-asc': (column == 'categoryName' && !isDesc),
+                        'fa-sort-desc': (column == 'categoryName' && isDesc) }"
+                                aria-hidden="true"></i>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let category of categories | filter: searchField | orderBy: {property: column, direction: direction}">
+                    <th scope="row" class="text-center"><a [routerLink]="['/admin-tools/category/info',category._id]" class="btn btn-default myClass"><i class="fa fa-info-circle"></i></a></th>
+                    <td>{{category.categoryName}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

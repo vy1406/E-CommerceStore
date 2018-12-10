@@ -1,0 +1,97 @@
+<div [@routerTransition]>
+    <app-admin-header [heading]="'Details'" [thirdInput]="'Product'" [thirdLink]="'product'"></app-admin-header>
+    <img *ngIf="product" src="{{product.pic}}" id="pic" class="responsive-img myClass" />
+    <div class="row">
+        <div class="col-md-4 push-md-4 text-center">
+            <form role="form" novalidate [formGroup]="form" (ngSubmit)="onUpdateSubmit()" class="form-horizontal">
+                <div class="form-content form-horizontal">
+
+                    <div class="form-group text-left" [ngClass]="form.controls['productName'].invalid && (form.controls['productName'].dirty) ? 'has-danger' : ''">
+                        <label class="control-label" style="">Product name:</label>
+
+                        <input type="text" class="form-control input-underline input-lg" [ngClass]="form.controls['productName'].invalid && (form.controls['productName'].dirty) ? 'form-control-danger' : ''" formControlName="productName">
+                        <div *ngIf="form.controls['productName'].invalid && (form.controls['productName'].dirty)" class="text-left">
+                            <label *ngIf="form.controls['productName'].invalid" class="form-control-label" for="inputError">
+                                {{validateService.getFormValidationErrors(this.form, 'productName','Product name')}}
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group text-left" [ngClass]="form.controls['category'].invalid && form.controls['category'].dirty ? 'has-danger' : ''">
+                        <label>Category:</label>
+
+                        <select class="form-control" formControlName="category">
+                            <option *ngFor="let category of categories" [value]="category.categoryName">{{category.categoryName}}</option>
+                        </select>
+                        <div *ngIf="form.controls['category'].invalid && form.controls['category'].dirty" class="text-left">
+                            <label *ngIf="form.controls['category'].invalid" class="form-control-label" for="inputError">
+                                {{validateService.getFormValidationErrors(this.form, 'category','Category')}}
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group text-left" [ngClass]="form.controls['price'].invalid && form.controls['price'].dirty? 'has-danger' : ''">
+                        <label>Price:</label>
+
+                        <input type="number" class="form-control input-underline input-lg" [ngClass]="form.controls['price'].invalid && form.controls['price'].dirty ? 'form-control-danger' : ''" formControlName="price">
+                        <div *ngIf="form.controls['price'].invalid && form.controls['price'].dirty" class="text-left">
+                            <label *ngIf="form.controls['price'].invalid" class="form-control-label" for="inputError">
+                                {{validateService.getFormValidationErrors(this.form, 'price','Price', '$')}}
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group text-left" [ngClass]="form.controls['volume'].invalid && form.controls['volume'].dirty ? 'has-danger' : ''">
+                        <label>Volume %:</label>
+
+                        <input type="number" class="form-control input-underline input-lg" [ngClass]="form.controls['volume'].invalid && form.controls['volume'].dirty ? 'form-control-danger' : ''" formControlName="volume">
+                        <div *ngIf="form.controls['volume'].invalid && form.controls['volume'].dirty" class="text-left">
+                            <label *ngIf="form.controls['volume'].invalid" class="form-control-label" for="inputError">
+                                {{validateService.getFormValidationErrors(this.form, 'volume','Volume', '%')}}
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group text-left" [ngClass]="form.controls['capacity'].invalid && form.controls['capacity'].dirty ? 'has-danger' : ''">
+                        <label>Capacity:</label>
+
+                        <input type="number" class="form-control input-underline input-lg" [ngClass]="form.controls['capacity'].invalid && form.controls['capacity'].dirty ? 'form-control-danger' : ''" formControlName="capacity">
+                        <div *ngIf="form.controls['capacity'].invalid && form.controls['capacity'].dirty" class="text-left">
+                            <label *ngIf="form.controls['capacity'].invalid" class="form-control-label" for="inputError">
+                                {{validateService.getFormValidationErrors(this.form, 'capacity','Capacity', 'L')}}
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group text-left" [ngClass]="form.controls['origin'].invalid && form.controls['origin'].dirty ? 'has-danger' : ''">
+                        <label>Origin:</label>
+
+                        <select class="form-control" formControlName="origin">
+                            <option *ngFor="let country of countries" [value]="country.countryName">{{country.countryName}}</option>
+                        </select>
+                        <div *ngIf="form.controls['origin'].invalid && form.controls['origin'].dirty" class="text-left">
+                            <label *ngIf="form.controls['origin'].invalid" class="form-control-label" for="inputError">
+                                {{validateService.getFormValidationErrors(this.form, 'origin','Origin')}}
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group text-left">
+                        <label>Pic input:</label>
+                        <input type="file" (change)="fileChange($event)" class="form-control-file" formControlName="pic">
+                    </div>
+
+                    <div class="form-group text-left">
+                        <label>Text area</label>
+                        <textarea class="form-control" rows="3" formControlName="info"></textarea>
+                    </div>
+
+                </div>
+                <input type="submit" class="btn btn-primary" value="Update">
+                &nbsp;
+                <button type="button" (click)="onClickRemoveConfirm()" class="btn btn-primary">Delete</button>
+            </form>
+        </div>
+    </div>
+    <!-- /.row -->
+</div>

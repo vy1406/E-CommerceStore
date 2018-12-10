@@ -1,0 +1,511 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>ProjectY1.1</Name>
+    <RootNamespace>ProjectY1.1</RootNamespace>
+    <NodeExePath>C:\Users\OMEN\AppData\Roaming\npm\nodemon.cmd</NodeExePath>
+    <EnableTypeScript>true</EnableTypeScript>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
+    <ToolsVersionPromptShown>0.0</ToolsVersionPromptShown>
+    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>86e132e4-34f2-4557-ac9b-754402a2a322</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>server.js</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <NodejsPort>1337</NodejsPort>
+    <StartWebBrowser>True</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="angular-src2\karma.conf.js" />
+    <Compile Include="angular-src2\protractor.conf.js" />
+    <Compile Include="config\database.js" />
+    <Compile Include="config\passport.js" />
+    <Compile Include="models\category.js" />
+    <Compile Include="models\country.js" />
+    <Compile Include="models\product.js" />
+    <Compile Include="models\purchasedItem.js" />
+    <Compile Include="models\user.js" />
+    <Compile Include="models\wishlist.js" />
+    <Compile Include="routes\categories.js" />
+    <Compile Include="routes\Countries.js" />
+    <Compile Include="routes\products.js" />
+    <Compile Include="routes\users.js" />
+    <Compile Include="server.js" />
+    <Content Include="angular-src2\.angular-cli.json" />
+    <Content Include="angular-src2\.editorconfig" />
+    <Content Include="angular-src2\.gitignore" />
+    <Content Include="angular-src2\e2e\tsconfig.e2e.json" />
+    <Content Include="angular-src2\LICENSE" />
+    <Content Include="angular-src2\package-lock.json" />
+    <Content Include="angular-src2\package.json" />
+    <Content Include="angular-src2\README.md" />
+    <Content Include="angular-src2\src\app\app.component.html" />
+    <Content Include="angular-src2\src\app\app.component.scss" />
+    <Content Include="angular-src2\src\app\layout\Admin tools\admin-tools.component.html" />
+    <Content Include="angular-src2\src\app\layout\Admin tools\admin-tools.component.scss" />
+    <Content Include="angular-src2\src\app\layout\Admin tools\category\category-add\category-add.component.html" />
+    <Content Include="angular-src2\src\app\layout\Admin tools\category\category-add\category-add.component.scss" />
+    <Content Include="angular-src2\src\app\layout\Admin tools\category\category-info\category-info.component.html" />
+    <Content Include="angular-src2\src\app\layout\Admin tools\category\category-info\category-info.component.scss" />
+    <Content Include="angular-src2\src\app\layout\Admin tools\category\category-remove\category-remove.component.html" />
+    <Content Include="angular-src2\src\app\layout\Admin tools\category\category-remove\category-remove.component.scss" />
+    <Content Include="angular-src2\src\app\layout\Admin tools\category\category.component.html" />
+    <Content Include="angular-src2\src\app\layout\Admin tools\category\category.component.scss" />
+    <Content Include="angular-src2\src\app\layout\Admin tools\product\product-add\product-add.component.html" />
+    <Content Include="angular-src2\src\app\layout\Admin tools\product\product-add\product-add.component.scss" />
+    <Content Include="angular-src2\src\app\layout\Admin tools\product\product-info\product-info.component.html" />
+    <Content Include="angular-src2\src\app\layout\Admin tools\product\product-info\product-info.component.scss" />
+    <Content Include="angular-src2\src\app\layout\Admin tools\product\product.component.html" />
+    <Content Include="angular-src2\src\app\layout\Admin tools\product\product.component.scss" />
+    <Content Include="angular-src2\src\app\layout\Admin tools\product\remove-confirm\remove-confirm.component.html" />
+    <Content Include="angular-src2\src\app\layout\Admin tools\product\remove-confirm\remove-confirm.component.scss" />
+    <Content Include="angular-src2\src\app\layout\advanced-search\advanced-search.component.html" />
+    <Content Include="angular-src2\src\app\layout\advanced-search\advanced-search.component.scss" />
+    <Content Include="angular-src2\src\app\layout\cart\cart.component.html" />
+    <Content Include="angular-src2\src\app\layout\cart\cart.component.scss" />
+    <Content Include="angular-src2\src\app\layout\category-products\category-products.component.html" />
+    <Content Include="angular-src2\src\app\layout\category-products\category-products.component.scss" />
+    <Content Include="angular-src2\src\app\layout\dashboard\components\chat\chat.component.html" />
+    <Content Include="angular-src2\src\app\layout\dashboard\components\chat\chat.component.scss" />
+    <Content Include="angular-src2\src\app\layout\dashboard\components\notification\notification.component.html" />
+    <Content Include="angular-src2\src\app\layout\dashboard\components\notification\notification.component.scss" />
+    <Content Include="angular-src2\src\app\layout\dashboard\components\timeline\timeline.component.html" />
+    <Content Include="angular-src2\src\app\layout\dashboard\components\timeline\timeline.component.scss" />
+    <Content Include="angular-src2\src\app\layout\dashboard\dashboard.component.html" />
+    <Content Include="angular-src2\src\app\layout\dashboard\dashboard.component.scss" />
+    <Content Include="angular-src2\src\app\layout\layout.component.html" />
+    <Content Include="angular-src2\src\app\layout\layout.component.scss" />
+    <Content Include="angular-src2\src\app\layout\show-categories\show-categories.component.html" />
+    <Content Include="angular-src2\src\app\layout\show-categories\show-categories.component.scss" />
+    <Content Include="angular-src2\src\app\layout\show-products\show-products.component.html" />
+    <Content Include="angular-src2\src\app\layout\show-products\show-products.component.scss" />
+    <Content Include="angular-src2\src\app\layout\user\history-item\history-item.component.html" />
+    <Content Include="angular-src2\src\app\layout\user\history-item\history-item.component.scss" />
+    <Content Include="angular-src2\src\app\layout\user\login\login.component.html" />
+    <Content Include="angular-src2\src\app\layout\user\login\login.component.scss" />
+    <Content Include="angular-src2\src\app\layout\user\profile\profile.component.html" />
+    <Content Include="angular-src2\src\app\layout\user\profile\profile.component.scss" />
+    <Content Include="angular-src2\src\app\layout\user\purchase-history\purchase-history.component.html" />
+    <Content Include="angular-src2\src\app\layout\user\purchase-history\purchase-history.component.scss" />
+    <Content Include="angular-src2\src\app\layout\user\signup\signup.component.html" />
+    <Content Include="angular-src2\src\app\layout\user\signup\signup.component.scss" />
+    <Content Include="angular-src2\src\app\layout\user\wishlist\wishlist.component.html" />
+    <Content Include="angular-src2\src\app\layout\user\wishlist\wishlist.component.scss" />
+    <Content Include="angular-src2\src\app\not-found\not-found.component.html" />
+    <Content Include="angular-src2\src\app\not-found\not-found.component.scss" />
+    <Content Include="angular-src2\src\app\shared\components\category-box\category-box.component.html" />
+    <Content Include="angular-src2\src\app\shared\components\category-box\category-box.component.scss" />
+    <Content Include="angular-src2\src\app\shared\components\header\header.component.html" />
+    <Content Include="angular-src2\src\app\shared\components\header\header.component.scss" />
+    <Content Include="angular-src2\src\app\shared\components\navbar\navbar.component.html" />
+    <Content Include="angular-src2\src\app\shared\components\navbar\navbar.component.scss" />
+    <Content Include="angular-src2\src\app\shared\components\sidebar\sidebar.component.html" />
+    <Content Include="angular-src2\src\app\shared\components\sidebar\sidebar.component.scss" />
+    <Content Include="angular-src2\src\app\shared\models\history.ts" />
+    <Content Include="angular-src2\src\app\shared\models\historyItem.ts" />
+    <Content Include="angular-src2\src\app\shared\modules\admin-header\admin-header.component.html" />
+    <Content Include="angular-src2\src\app\shared\modules\admin-header\admin-header.component.scss" />
+    <Content Include="angular-src2\src\app\shared\modules\content-header\content-header.component.html" />
+    <Content Include="angular-src2\src\app\shared\modules\content-header\content-header.component.scss" />
+    <Content Include="angular-src2\src\app\shared\modules\product-box\product-box.component.html" />
+    <Content Include="angular-src2\src\app\shared\modules\product-box\product-box.component.scss" />
+    <Content Include="angular-src2\src\app\shared\modules\stat\stat.component.html" />
+    <Content Include="angular-src2\src\app\shared\modules\stat\stat.component.scss" />
+    <Content Include="angular-src2\src\assets\i18n\en.json" />
+    <Content Include="angular-src2\src\assets\i18n\es.json" />
+    <Content Include="angular-src2\src\assets\i18n\fa.json" />
+    <Content Include="angular-src2\src\assets\i18n\fr.json" />
+    <Content Include="angular-src2\src\assets\i18n\it.json" />
+    <Content Include="angular-src2\src\assets\i18n\ur.json" />
+    <Content Include="angular-src2\src\assets\images\home_image.jpg" />
+    <Content Include="angular-src2\src\assets\images\logo.png" />
+    <Content Include="angular-src2\src\assets\images\slider1.jpg" />
+    <Content Include="angular-src2\src\assets\images\slider2.jpg" />
+    <Content Include="angular-src2\src\assets\images\slider3.jpg" />
+    <Content Include="angular-src2\src\favicon.ico" />
+    <Content Include="angular-src2\src\index.html" />
+    <Content Include="angular-src2\src\styles\app.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\bootstrap-grid.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\bootstrap.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_alert.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_badge.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_buttons.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_cards.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_float.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_forms.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_gradients.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_grid.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_hover.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_image.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_list-group.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_lists.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_navbar-align.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_pagination.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_resize.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_screen-reader.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_size.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_table-row.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_text-hide.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_transforms.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\mixins\_visibility.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\utilities\_align.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\utilities\_background.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\utilities\_borders.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\utilities\_clearfix.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\utilities\_display.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\utilities\_flex.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\utilities\_float.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\utilities\_position.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\utilities\_screenreaders.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\utilities\_sizing.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\utilities\_spacing.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\utilities\_text.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\utilities\_visibility.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_alert.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_badge.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_breadcrumb.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_button-group.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_buttons.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_card.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_carousel.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_close.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_code.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_custom-forms.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_custom.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_dropdown.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_forms.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_grid.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_images.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_input-group.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_jumbotron.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_list-group.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_media.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_mixins.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_modal.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_nav.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_navbar.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_normalize.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_pagination.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_popover.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_print.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_progress.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_reboot.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_responsive-embed.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_tables.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_tooltip.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_transitions.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_type.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_utilities.scss" />
+    <Content Include="angular-src2\src\styles\bootstrap\_variables.scss" />
+    <Content Include="angular-src2\src\styles\_responsive.scss" />
+    <Content Include="angular-src2\src\styles\_rtl.scss" />
+    <Content Include="angular-src2\src\styles\_spinner.scss" />
+    <Content Include="angular-src2\src\styles\_utils.scss" />
+    <Content Include="angular-src2\src\tsconfig.app.json" />
+    <Content Include="angular-src2\src\tsconfig.spec.json" />
+    <Content Include="angular-src2\tsconfig.json" />
+    <Content Include="angular-src2\tslint.json" />
+    <Content Include="angular-src2\yarn.lock" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="angular-src2\" />
+    <Folder Include="angular-src2\e2e\" />
+    <Folder Include="angular-src2\src\" />
+    <Folder Include="angular-src2\src\app\" />
+    <Folder Include="angular-src2\src\app\layout\" />
+    <Folder Include="angular-src2\src\app\layout\Admin tools\category\" />
+    <Folder Include="angular-src2\src\app\layout\Admin tools\category\category-add\" />
+    <Folder Include="angular-src2\src\app\layout\Admin tools\category\category-info\" />
+    <Folder Include="angular-src2\src\app\layout\Admin tools\category\category-remove\" />
+    <Folder Include="angular-src2\src\app\layout\Admin tools\product\" />
+    <Folder Include="angular-src2\src\app\layout\Admin tools\product\product-add\" />
+    <Folder Include="angular-src2\src\app\layout\Admin tools\product\product-info\" />
+    <Folder Include="angular-src2\src\app\layout\Admin tools\product\remove-confirm\" />
+    <Folder Include="angular-src2\src\app\layout\advanced-search\" />
+    <Folder Include="angular-src2\src\app\layout\cart\" />
+    <Folder Include="angular-src2\src\app\layout\category-products\" />
+    <Folder Include="angular-src2\src\app\layout\dashboard\" />
+    <Folder Include="angular-src2\src\app\layout\dashboard\components\" />
+    <Folder Include="angular-src2\src\app\layout\dashboard\components\chat\" />
+    <Folder Include="angular-src2\src\app\layout\dashboard\components\notification\" />
+    <Folder Include="angular-src2\src\app\layout\dashboard\components\timeline\" />
+    <Folder Include="angular-src2\src\app\layout\Admin tools\" />
+    <Folder Include="angular-src2\src\app\layout\show-categories\" />
+    <Folder Include="angular-src2\src\app\layout\show-products\" />
+    <Folder Include="angular-src2\src\app\layout\user\" />
+    <Folder Include="angular-src2\src\app\layout\user\history-item\" />
+    <Folder Include="angular-src2\src\app\layout\user\login\" />
+    <Folder Include="angular-src2\src\app\layout\user\profile\" />
+    <Folder Include="angular-src2\src\app\layout\user\purchase-history\" />
+    <Folder Include="angular-src2\src\app\layout\user\signup\" />
+    <Folder Include="angular-src2\src\app\layout\user\wishlist\" />
+    <Folder Include="angular-src2\src\app\not-found\" />
+    <Folder Include="angular-src2\src\app\shared\" />
+    <Folder Include="angular-src2\src\app\shared\components\" />
+    <Folder Include="angular-src2\src\app\shared\components\category-box\" />
+    <Folder Include="angular-src2\src\app\shared\components\header\" />
+    <Folder Include="angular-src2\src\app\shared\components\navbar\" />
+    <Folder Include="angular-src2\src\app\shared\components\sidebar\" />
+    <Folder Include="angular-src2\src\app\shared\guard\" />
+    <Folder Include="angular-src2\src\app\shared\modules\" />
+    <Folder Include="angular-src2\src\app\shared\modules\admin-header\" />
+    <Folder Include="angular-src2\src\app\shared\modules\content-header\" />
+    <Folder Include="angular-src2\src\app\shared\modules\product-box\" />
+    <Folder Include="angular-src2\src\app\shared\modules\stat\" />
+    <Folder Include="angular-src2\src\app\shared\models\" />
+    <Folder Include="angular-src2\src\app\shared\pipes\" />
+    <Folder Include="angular-src2\src\app\shared\services\" />
+    <Folder Include="angular-src2\src\assets\" />
+    <Folder Include="angular-src2\src\assets\i18n\" />
+    <Folder Include="angular-src2\src\assets\images\" />
+    <Folder Include="angular-src2\src\environments\" />
+    <Folder Include="angular-src2\src\styles\" />
+    <Folder Include="angular-src2\src\styles\bootstrap\" />
+    <Folder Include="angular-src2\src\styles\bootstrap\mixins\" />
+    <Folder Include="angular-src2\src\styles\bootstrap\utilities\" />
+    <Folder Include="config\" />
+    <Folder Include="models\" />
+    <Folder Include="public\" />
+    <Folder Include="uploads\" />
+    <Folder Include="routes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="angular-src2\e2e\app.e2e-spec.ts" />
+    <TypeScriptCompile Include="angular-src2\e2e\app.po.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\app-routing.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\app.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\app.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\admin-tools.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\admin-tools.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\admin-tools.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\admin-tools-routing.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\category\category-add\category-add.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\category\category-add\category-add.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\category\category-add\category-add-routing.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\category\category-add\category-add.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\category\category-info\category-info.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\category\category-info\category-info.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\category\category-info\category-info-routing.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\category\category-info\category-info.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\category\category-remove\category-remove.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\category\category-remove\category-remove.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\category\category-remove\category-remove-routing.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\category\category-remove\category-remove.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\category\category.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\category\category.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\category\category-routing.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\category\category.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\product\product-add\product-add-routing.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\product\product-add\product-add.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\product\product-add\product-add.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\product\product-add\product-add.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\product\product-info\product-info-routing.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\product\product-info\product-info.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\product\product-info\product-info.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\product\product-info\product-info.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\product\product-routing.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\product\product.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\product\product.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\product\product.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\product\remove-confirm\remove-confirm-routing.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\product\remove-confirm\remove-confirm.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\product\remove-confirm\remove-confirm.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\Admin tools\product\remove-confirm\remove-confirm.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\advanced-search\advanced-search.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\advanced-search\advanced-search.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\advanced-search\advanced-search-routing.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\advanced-search\advanced-search.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\cart\cart-routing.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\cart\cart.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\cart\cart.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\cart\cart.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\category-products\category-products.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\category-products\category-products.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\category-products\category-products-routing.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\category-products\category-products.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\dashboard\components\chat\chat.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\dashboard\components\chat\chat.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\dashboard\components\index.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\dashboard\components\notification\notification.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\dashboard\components\notification\notification.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\dashboard\components\timeline\timeline.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\dashboard\components\timeline\timeline.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\dashboard\dashboard-routing.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\dashboard\dashboard.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\dashboard\dashboard.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\dashboard\dashboard.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\layout-routing.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\layout.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\layout.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\layout.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\show-categories\show-categories.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\show-categories\show-categories.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\show-categories\show-categories-routing.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\show-categories\show-categories.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\show-products\show-products.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\show-products\show-products.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\show-products\show-products-routing.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\show-products\show-products.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\user\history-item\history-item.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\user\history-item\history-item.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\user\history-item\history-item-routing.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\user\history-item\history-item.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\user\purchase-history\purchase-history.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\user\purchase-history\purchase-history.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\user\purchase-history\purchase-history-routing.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\user\purchase-history\purchase-history.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\user\user-routing.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\user\login\login-routing.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\user\login\login.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\user\login\login.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\user\login\login.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\user\profile\profile.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\user\profile\profile.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\user\profile\profile-routing.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\user\profile\profile.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\user\signup\signup-routing.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\user\signup\signup.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\user\signup\signup.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\user\signup\signup.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\user\wishlist\wishlist-routing.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\user\wishlist\wishlist.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\user\wishlist\wishlist.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\layout\user\wishlist\wishlist.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\not-found\not-found-routing.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\not-found\not-found.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\not-found\not-found.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\router.animations.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\components\category-box\category-box.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\components\category-box\category-box.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\components\header\header.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\components\header\header.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\components\index.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\components\navbar\navbar.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\components\navbar\navbar.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\components\sidebar\sidebar.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\components\sidebar\sidebar.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\guard\admin.guard.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\guard\admin.guard.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\guard\auth.guard.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\guard\auth.guard.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\index.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\models\cart.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\models\cartItem.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\models\category.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\models\index.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\models\product.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\modules\admin-header\admin-header.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\modules\admin-header\admin-header.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\modules\admin-header\admin-header.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\modules\content-header\content-header.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\modules\content-header\content-header.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\modules\content-header\content-header.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\modules\index.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\modules\product-box\product-box.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\modules\product-box\product-box.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\modules\product-box\product-box.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\modules\stat\stat.component.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\modules\stat\stat.component.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\modules\stat\stat.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\pipes\capitalize.pipe.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\pipes\capitalize.pipe.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\pipes\filter.pipe.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\pipes\filter.pipe.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\pipes\order-by.pipe.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\pipes\order-by.pipe.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\pipes\shared-pipes.module.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\services\auth.service.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\services\auth.service.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\services\cart.service.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\services\cart.service.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\services\category.service.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\services\category.service.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\services\country.service.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\services\country.service.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\services\index.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\services\product.service.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\services\product.service.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\services\shared.service.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\services\shared.service.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\services\validate.service.spec.ts" />
+    <TypeScriptCompile Include="angular-src2\src\app\shared\services\validate.service.ts" />
+    <TypeScriptCompile Include="angular-src2\src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="angular-src2\src\environments\environment.ts" />
+    <TypeScriptCompile Include="angular-src2\src\main.ts" />
+    <TypeScriptCompile Include="angular-src2\src\polyfills.ts" />
+    <TypeScriptCompile Include="angular-src2\src\test.ts" />
+    <TypeScriptCompile Include="angular-src2\src\typings.d.ts" />
+  </ItemGroup>
+  <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

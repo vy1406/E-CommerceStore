@@ -1,0 +1,34 @@
+<div [@routerTransition]>
+    <app-content-header [heading]="'Purchase Details'" [current]="historyItem.date | date: 'shortDate'" [firstLink]="'profile'" [firstHeading]="'Profile'" [secondLink]="'purchase-history'" [secondHeading]="'My orders'"></app-content-header>
+    <div class="card mb-3">
+        <div class="card-header">
+        </div>
+        <table class="table table-sm table-bordered table-hover table-striped text-center">
+            <thead>
+                <tr>
+                    <th>
+                        Product name 
+                    </th>
+                    <th>
+                        Category 
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Quantity
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of historyItem.arrItems">
+                    <td>{{item.product.productName }}</td>
+                    <td>{{item.product.category}}</td>
+                    <td>{{item.product.price}}</td>
+                    <td>{{item.quantity}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

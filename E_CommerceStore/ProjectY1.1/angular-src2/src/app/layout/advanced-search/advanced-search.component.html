@@ -1,0 +1,122 @@
+<div [@routerTransition]>
+    <div class="col-xl-12">
+        <!--<app-search-header [heading]="'Advanced search'" [current]="'Search'" [firstLink]="'dashboard'" [firstHeading]="'Home'"></app-search-header>-->
+        <h2 class="page-header">
+            Advanced search
+        </h2>
+        <div class="breadcrumb row" style="padding-bottom:0px;margin-bottom:0px;">
+            <div class="col-4">
+                <div class="xxb center">
+                    <a (click)="open(filterContent)" style="color:#000">
+                        <img src="http://m.ksp.co.il/img/f.png" style="height: 20px;" alt=""><br><p style="padding-right: 14px;">Filter</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="xxb center">
+                    <img src="http://m.ksp.co.il/img/sort.png" style="height: 20px;" alt="">
+                    <br>
+                    <select [(ngModel)]="sortSelect" size="1" dir="ltr" (change)="sort()" class="mySelect">
+                        <option [ngValue]="lowest">Sort</option>
+                        <option [ngValue]="-1">Sort: lowest first</option>
+                        <option [ngValue]="1">Sort: highest first</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="xxb center">
+                    <img src="http://m.ksp.co.il/img/range.png" style="height: 20px;" alt="">
+                    <br>
+                    <select [(ngModel)]="priceSelect" size="1" dir="ltr" (change)="applyFilter()" class="mySelect">
+                        <option [ngValue]="noPrice">Price</option>
+                        <option [ngValue]="0">0-100</option>
+                        <option [ngValue]="100">100-200</option>
+                        <option [ngValue]="200">200-300</option>
+                        <option [ngValue]="300">300-400</option>
+                        <option [ngValue]="400">400-500</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table class="myTable">
+        <tbody>
+            <tr class="mytr">
+                <td style="width: 110px;">
+                    <a *ngIf="currentPage>1" style="margin-left:8px;color: #fff;" (click)="previousPage()">&lt;&lt; Previous</a>
+                </td>
+                <td style="text-align:center;">
+                     Page <b>{{currentPage}}</b> of <b>{{totalPages}}</b>
+                </td>
+                <td style="width: 110px; text-align:right; ">
+                    <a *ngIf="currentPage<totalPages" style="margin-right:8px;color: #fff;" (click)="nextPage()">Next &gt;&gt;</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+                <td colspan="3"></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="row">
+        <app-product-box *ngFor="let product of currentPageProducts" class="col-6" [product]="product"></app-product-box>
+    </div>
+</div>
+<ng-template #filterContent let-c="close" let-d="dismiss" style="margin-top:50px;" class="modal fade">
+    <div class="modal-header">
+        <h4 class="modal-title">Filter</h4>
+        <button type="button" #closeBut class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div>
+            <div class="row" style="background-color: rgb(71, 163, 218);">
+                <p style="color:white; margin-bottom:0px; margin-left:5px;">Category</p>
+            </div>
+            <ul>
+                <li *ngFor="let category of productsData.categories.values" (click)="checkField(category,'category')" [ngClass]="category.value ? 'redClass' : ''">
+                    {{category.key}}
+                </li>
+            </ul> 
+        </div>
+        <div>
+            <div class="row" style="background-color: rgb(71, 163, 218);">
+                <p style="color:white; margin-bottom:0px; margin-left:5px;">Volume</p>
+            </div>
+            <ul>
+                <li *ngFor="let volume of productsData.volumes.values" (click)="checkField(volume,'volume')" [ngClass]="volume.value ? 'redClass' : ''">
+                    {{volume.key}}
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div class="row" style="background-color: rgb(71, 163, 218);">
+                <p style="color:white; margin-bottom:0px; margin-left:5px;">Capacity</p>
+            </div>
+            <ul>
+                <li *ngFor="let capacity of productsData.capacities.values" (click)="checkField(capacity,'capacity')" [ngClass]="capacity.value ? 'redClass' : ''">
+                    {{capacity.key}}
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div class="row" style="background-color: rgb(71, 163, 218);">
+                <p style="color:white; margin-bottom:0px; margin-left:5px;">Origin</p>
+            </div>
+            <ul>
+                <li *ngFor="let origin of productsData.origins.values" (click)="checkField(origin,'origin')" [ngClass]="origin.value ? 'redClass' : ''">
+                    {{origin.key}}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="modal-footer" style="justify-content: center;">
+        <button type="button" class="btn btn-secondary" (click)="clearFilter();d('Close click')">Clear filter</button>
+        <button type="button" class="btn btn-secondary" (click)="d('Close click')">Close</button>
+    </div>
+</ng-template>
+
+

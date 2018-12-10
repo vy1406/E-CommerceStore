@@ -1,0 +1,61 @@
+<div [@routerTransition]>
+    <div class="row">
+        <div class="col-md-4 push-md-4 text-center">
+            <img class="user-avatar" src="assets/images/logo.png" width="150px" />
+            <h4>Please signup to proceed</h4>
+            <form role="form" novalidate [formGroup]="form" (ngSubmit)="onRegisterSubmit()">
+                <div class="form-content">
+
+                    <div class="form-group">
+                        <div class="form-group" [ngClass]="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched) ? 'has-danger' : ''">
+                            <input type="text" class="form-control input-underline input-lg" [ngClass]="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched) ? 'form-control-danger' : ''" formControlName="name" placeholder="Full Name">
+                            <div *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)" class="text-left">
+                                <label *ngIf="form.controls['name'].invalid" class="form-control-label" for="inputError">
+                                    {{validateService.getFormValidationErrors(this.form, 'name','Name')}}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-group" [ngClass]="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched) ? 'has-danger' : ''">
+                            <input type="text" class="form-control input-underline input-lg" [ngClass]="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched) ? 'form-control-danger' : ''" formControlName="email" placeholder="Email">
+                            <div *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)" class="text-left">
+                                <label *ngIf="form.controls['email'].invalid" class="form-control-label" for="inputError">
+                                    {{validateService.getFormValidationErrors(this.form, 'email', 'Email')}}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-group" [ngClass]="form.controls['password'].invalid && (form.controls['password'].dirty || form.controls['password'].touched) ? 'has-danger' : ''">
+                            <input type="password" class="form-control input-underline input-lg" [ngClass]="form.controls['password'].invalid && (form.controls['password'].dirty || form.controls['password'].touched) ? 'form-control-danger' : ''" formControlName="password" placeholder="Password">
+                            <div *ngIf="form.controls['password'].invalid && (form.controls['password'].dirty || form.controls['password'].touched)" class="text-left">
+                                <label *ngIf="form.controls['password'].invalid" class="form-control-label" for="inputError">
+                                    {{validateService.getFormValidationErrors(this.form, 'password', 'Password')}}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-group" [ngClass]="form.hasError('passwordRepInvalid') && (form.controls['passwordRep'].dirty || form.controls['passwordRep'].touched) ? 'has-danger' : ''">
+                            <input type="password" class="form-control input-underline input-lg" [ngClass]="form.hasError('passwordRepInvalid') && (form.controls['passwordRep'].dirty || form.controls['passwordRep'].touched) ? 'form-control-danger' : ''" formControlName="passwordRep" placeholder="Repeat Password">
+                            <div *ngIf="form.hasError('passwordRepInvalid') && (form.controls['passwordRep'].dirty || form.controls['passwordRep'].touched)" class="text-left">
+                                <label *ngIf="form.hasError('passwordRepInvalid')" class="form-control-label" for="inputError">
+                                    *Passwords do not match.
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <input type="submit" class="btn btn-primary" value="Register">
+                <!--<a class="btn rounded-btn" [routerLink]="['/dashboard']"> Register </a>-->
+                                &nbsp;
+                <a class="btn btn-primary" [routerLink]="['/login']"> Log in </a>
+            </form>
+        </div>
+    </div>
+</div>

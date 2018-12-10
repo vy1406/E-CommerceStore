@@ -1,0 +1,77 @@
+
+<div class="col-item">
+    <div class="photo text-center">
+        <img *ngIf="product" src="{{product.pic}}" id="pic" class="responsive-img myClass" />
+    </div>
+    <div class="info">
+        <div class="row">
+            <div class="price col-md-6">
+                <h6> {{product.productName}}</h6>
+                <h6 class="price-text-color">${{product.price}}</h6>
+            </div>
+        </div>
+        <div class="separator clear-left">
+            <p class="btn-add">
+                <button type="button" (click)="onClickAddToCart(1)" class="btn btn-success btn-product myBtn"><span class="fa fa-shopping-cart"></span> Add</button>
+            </p>
+            <p class="btn-details">
+                <button type="button" (click)="open(content)" class="btn btn-primary btn-product myBtn"><span class="fa fa-list"></span> Details</button>
+            </p>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<ng-template #content let-c="close" let-d="dismiss" style="margin-top:50px;" class="modal fade">
+    <div class="modal-header">
+        <h4 class="modal-title">{{product.productName}}</h4>
+        <button type="button" #closeBut class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <img *ngIf="product" src="{{product.pic}}" id="pic" class="responsive-img myClass" style="max-height:400px" />
+        <dl class="dl-horizontal left myFont">
+            <dt>
+                Category:
+            </dt>
+
+            <dd>
+                {{product.category}}
+            </dd>
+
+            <dt>
+                Volume %:
+            </dt>
+
+            <dd>
+                {{product.volume}}
+            </dd>
+
+            <dt>
+                Capacity:
+            </dt>
+
+            <dd>
+                {{product.capacity}}
+            </dd>
+
+            <dt>
+                Origin:
+            </dt>
+
+            <dd>
+                {{product.origin}}
+            </dd>
+        </dl>
+        <p *ngIf="product.info!=''">{{product.info}}</p>
+        <h3><span class="fa fa-usd"></span> {{product.price}}</h3>
+        <input type="number" #quantity name="pQuantity" value="1" min="1" max="10" />
+    </div>
+    <div class="modal-footer" style="justify-content: center;">
+        <button type="button" (click)="onClickAddToCart(quantity.value);d('Cross click');" class="btn btn-primary btn-product"><span class="fa fa-shopping-cart"></span> Add to cart</button>
+        <button type="button" *ngIf="fromWhere==undefined" (click)="d('Cross click');addToWishList()" class="btn btn-primary"><span class="fa fa-heart"></span> Add To Wishlist</button>
+        <button type="button" *ngIf="fromWhere!=undefined" (click)="d('Cross click');removeFromWishList()" class="btn btn-primary"><span class="fa fa-trash-o"></span> Remove Wishlist</button>
+    </div>
+</ng-template>
+
+

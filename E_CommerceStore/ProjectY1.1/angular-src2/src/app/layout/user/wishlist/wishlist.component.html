@@ -1,0 +1,7 @@
+<div [@routerTransition]>
+    <app-content-header [heading]="'Wishlist'" [current]="'Wishlist'" [firstLink]="'profile'" [firstHeading]="'Profile'"></app-content-header>
+    <div class="row">
+        <app-product-box *ngFor="let product of products" class="col-6" [fromWhere]="'wishlist'" [product]="product.product"></app-product-box>
+    </div>
+</div>
+

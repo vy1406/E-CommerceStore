@@ -1,0 +1,52 @@
+<div [@routerTransition]>
+    <app-content-header [heading]="'Cart'" [current]="'Cart'" [firstLink]="'dashboard'" [firstHeading]="'Home'"></app-content-header>
+    <div class="card mb-3">
+        <div class="card-header">
+        </div>
+        <table class="table table-sm table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th class="text-center"><em class="fa fa-cog"></em></th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cartItem of cart.cartItems">
+                    <th scope="row" class="text-center"><button type="button" (click)="onClickRemoveFromCart(cartItem)" class="btn btn-primary myClass"><i class="fa fa-trash-o"></i></button></th>
+                    <td>{{cartItem.product.productName}} </td>
+                    <td>{{cartItem.quantity}}</td>
+                    <td>{{cartItem.product.price}}</td>
+                </tr>
+                <tr>
+                    <td></td><td></td>
+                    <td colspan="2"><strong>Total Amount</strong> ${{cart.totalAmount}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <button type="button" (click)="open(confirmContent)" class="btn btn-secondary">Pay</button>
+    <button type="button" (click)="onClickEmptyCart()" class="btn btn-secondary" style="width:140px;">Empty Cart </button>
+</div>
+<ng-template #confirmContent let-c="close" let-d="dismiss" style="margin-top:50px;" class="modal fade">
+    <div class="modal-header">
+        <h4 class="modal-title">Confrim buying</h4>
+        <button type="button" #closeBut class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div *ngIf="cart.totalAmount!=0">
+            <p>Are you sure you want to finish your purchase?</p>
+            <p><strong>Total amount to pay: </strong>${{cart.totalAmount}}</p>
+        </div>
+        <div *ngIf="cart.totalAmount==0">
+            Your cart is empty, add some products before doing check out.
+        </div>
+    </div>
+    <div class="modal-footer" style="justify-content: center;">
+        <button *ngIf="cart.totalAmount!=0" type="button" class="btn btn-secondary" (click)="onClickPay();d('Close click')">Confirm</button>
+        <button type="button" class="btn btn-secondary" (click)="d('Close click')">Back</button>
+    </div>
+</ng-template>

@@ -1,0 +1,18 @@
+.nigger-button {
+    border-radius: 4px;
+    background: pink;
+    padding: 5px 10px;
+
+    &:last-child {
+        margin: 0 10px;
+    }
+}
+
+.my-container {
+    display: flex;
+    justify-content: flex-end;
+    z-index: 10000;
+    background-color: #222 !important;
+    height: 50px;
+    padding: 5px;
+}

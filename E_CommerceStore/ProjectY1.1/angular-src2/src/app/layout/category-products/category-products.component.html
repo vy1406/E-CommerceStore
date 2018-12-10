@@ -1,0 +1,7 @@
+<div [@routerTransition]>
+    <app-content-header [heading]="categoryName +' products'" [current]="categoryName" [firstLink]="'dashboard'" [firstHeading]="'Home'" [secondLink]="'show-categories'" [secondHeading]="'categories'"></app-content-header>
+    <div class="row">
+        <app-product-box *ngFor="let product of products" class="col-6" [product]="product"></app-product-box>
+    </div>
+</div>
+

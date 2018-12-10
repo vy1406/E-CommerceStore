@@ -1,0 +1,35 @@
+<div [@routerTransition]>
+    <app-content-header [heading]="'Purchase history'" [current]="'History'" [firstLink]="'profile'" [firstHeading]="'Profile'"></app-content-header>
+    <div class="card mb-3">
+        <div class="card-header">
+            <!--<input type="text" placeholder="Search" [(ngModel)]="searchField" style="width:150px;" />-->
+        </div>
+        <table class="table table-sm table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th class="text-center"><em class="fa fa-cog"></em></th>
+                    <th class="pointer" (click)="sort('date')">
+                        Date <i class="fa" [ngClass]="{'fa-sort': column != 'date',
+                        'fa-sort-asc': (column == 'date' && !isDesc),
+                        'fa-sort-desc': (column == 'date' && isDesc) }"
+                                aria-hidden="true"></i>
+                    </th>
+                    <th class="pointer" (click)="sort('totalAmount')">
+                        Total amount <i class="fa" [ngClass]="{'fa-sort': column != 'totalAmount',
+                        'fa-sort-asc': (column == 'totalAmount' && !isDesc),
+                        'fa-sort-desc': (column == 'totalAmount' && isDesc) }"
+                                    aria-hidden="true"></i>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of history | orderBy: {property: column, direction: direction}">
+                    <th scope="row" class="text-center"><a [routerLink]="['/history-item',item._id]" class="btn btn-default myClass"><i class="fa fa-info-circle"></i></a></th>
+                    <td>{{item.date | date: 'shortDate' }}</td>
+                    <td>${{item.totalAmount}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

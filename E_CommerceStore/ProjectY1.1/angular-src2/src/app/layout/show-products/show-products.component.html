@@ -1,0 +1,7 @@
+<div [@routerTransition]>
+    <app-content-header [heading]="'Search result'" [current]="'Result for &quot;'+searchWord+'&quot;'" [firstLink]="'dashboard'" [firstHeading]="'Home'"></app-content-header>
+    <div class="row">
+        <app-product-box *ngFor="let product of products" class="col-6" [product]="product"></app-product-box>
+    </div>
+</div>
+

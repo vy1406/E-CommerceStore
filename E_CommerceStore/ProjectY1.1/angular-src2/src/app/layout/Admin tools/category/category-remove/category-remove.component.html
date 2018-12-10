@@ -1,0 +1,12 @@
+<div [@routerTransition]>
+    <app-admin-header [heading]="'Remove'" [thirdInput]="'Category'" [thirdLink]="'category'" [isRemove]="'yes'"></app-admin-header>
+
+    <div class="row">
+        <p style="margin-left:10px;"><strong>Category name:</strong></p><p style="margin-left:5px;"> {{category.categoryName}}</p>
+    </div>
+
+    <div class="row">
+        <button type="button" style="margin-left:10px;" (click)="onClickRemoveConfirm()" class="btn btn-primary">Delete</button>
+    </div>
+    <!-- /.row -->
+</div>

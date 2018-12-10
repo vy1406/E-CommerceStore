@@ -1,0 +1,12 @@
+<div *ngIf="user" [@routerTransition]>
+    <h2 class="page-header">{{user.name}}</h2>
+    <ul class="list-group">
+        <li class="list-group-item">Email: {{user.email}}</li>
+        <li class="list-group-item">
+            <a [routerLink]="['/wishlist']">Wishlist</a>
+        </li>
+        <li class="list-group-item">
+            <a [routerLink]="['/purchase-history']">My orders</a>
+        </li>
+    </ul>
+</div>

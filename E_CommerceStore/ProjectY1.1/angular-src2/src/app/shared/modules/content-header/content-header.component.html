@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-xl-12">
+        <h2 class="page-header">
+            {{heading}}
+        </h2>
+        <ol class="breadcrumb">
+            <li *ngIf="firstLink!=undefined" class="breadcrumb-item">
+               <a href="Javascript:void(0)" routerLink = "/{{firstLink}}">{{firstHeading | capitalize}}</a>
+            </li>
+            <li *ngIf="secondLink!=undefined" class="breadcrumb-item">
+                <a href="Javascript:void(0)" routerLink = "/{{secondLink}}">{{secondHeading | capitalize}}</a>
+            </li>
+            <li class="breadcrumb-item active"> {{current | capitalize}}</li>
+        </ol>
+    </div>
+</div>
